@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/next.svg";
+import {Divider} from "@nextui-org/react";
 
 export default function LeftNav() {
 
@@ -27,10 +28,12 @@ export default function LeftNav() {
                            priority
                     />
                 </Link>
+                <Divider className="my-4" />
                 <ul className="space-y-2 mt-3">
                     <NavItem href="/dashboard">Dashboard</NavItem>
                     <NavItem href="/stock">Stocks</NavItem>
                     <NavItem href="/trade">Trades</NavItem>
+                    <Divider className="my-4" />
                     <NavItem href="/admin">Admin</NavItem>
                 </ul>
             </div>

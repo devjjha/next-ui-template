@@ -2,7 +2,6 @@ import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import './globals.css'
 import React from "react";
-import Header from "@/components/header";
 import LeftNav from "@/components/LeftNav";
 
 const inter = Inter({subsets: ['latin']})
@@ -24,8 +23,13 @@ export default function RootLayout({
                 <div className={"dark:border-amber-50 border-2 rounded-3xl"}>
                     <LeftNav />
                 </div>
-                <div className={"w-full dark:border-amber-50 border-2 rounded-3xl"}>
+                <div className={"w-full flex flex-col dark:border-amber-50 border-2 rounded-3xl"}>
+                    <div>
+                    {/*<Header />*/}
+                    </div>
+                    <div>
                     {children}
+                    </div>
                 </div>
 
             </div>
