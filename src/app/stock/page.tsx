@@ -8,7 +8,8 @@ import {useDisclosure} from "@nextui-org/react";
 import * as actions from "@/actions";
 
 export default function StockHome() {
-    const [stock, setStock] = useState<SupportResistanceProps>()
+    // @ts-ignore
+    const [stock, setStock] = useState<SupportResistanceProps>(null)
     const [open, setOpen] = useState(false);
     const stocks = [
         {
@@ -49,10 +50,6 @@ export default function StockHome() {
         setOpen(true);
     };
 
-    const onOpenChange = () => {
-        console.log("Onchqange triggered")
-        setOpen(!open)
-    }
 
     function saveCallback(data: SupportResistanceProps) {
         console.log(data)
@@ -61,6 +58,8 @@ export default function StockHome() {
 
     function closeCallback() {
         setOpen(false)
+        // @ts-ignore
+        setStock(null)
     }
 
     return (
@@ -96,7 +95,9 @@ export default function StockHome() {
                 ))}
             </div>
             {stock &&
-                <SupportResistanceModal symbol={stock.symbol}
+                <SupportResistanceModal
+                    trend={stock.trend}
+                    symbol={stock.symbol}
                                         s1={stock.s1}
                                         s2={stock.s2}
                                         s3={stock.s3}

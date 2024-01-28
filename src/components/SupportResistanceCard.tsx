@@ -4,6 +4,7 @@ import React, {useState} from "react";
 
 
 export interface SupportResistanceProps {
+    trend?: string
     symbol: string
     s1: number
     s2: number
